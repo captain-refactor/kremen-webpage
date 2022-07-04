@@ -41,4 +41,4 @@ steps:
 timeout: 1500s
 substitutions:
   _DOCKER_PASSWORD: provide password
-  _SECRET_VERSION: 1
+  _SECRET_VERSION: "1"
