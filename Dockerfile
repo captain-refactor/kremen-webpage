@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:16
 WORKDIR /var/app
 COPY . .
 RUN npm i
