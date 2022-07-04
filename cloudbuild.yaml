@@ -2,10 +2,10 @@ steps:
   - name: gcr.io/cloud-builders/docker
     entrypoint: 'bash'
     args: [ '-c', 'docker login docker.io --username=yeneek --password=$_DOCKER_PASSWORD' ]
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - pull
-      - yeneek/kremen-webpage:latest
+#  - name: gcr.io/cloud-builders/docker
+#    args:
+#      - pull
+#      - yeneek/kremen-webpage:latest
   - name: gcr.io/cloud-builders/docker
     args:
       - build
