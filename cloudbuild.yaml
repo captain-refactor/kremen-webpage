@@ -22,22 +22,22 @@ steps:
       - push
       - docker.io/yeneek/kremen-webpage:$BUILD_ID
   # here is, where deployment starts
-#  - name: gcr.io/cloud-builders/gcloud
-#    entrypoint: 'bash'
-#    args:
-#      - -c
-#      - gcloud secrets versions access $_SECRET_VERSION --secret kubeconfig > /workspace/kubeconfig.yml
-#  - name: gcr.io/cloud-builders/kubectl
-#    entrypoint: kubectl
-#    env:
-#      - KUBECONFIG=/workspace/kubeconfig.yml
-#    args:
-#      - -n
-#      - kremen-personal
-#      - set
-#      - image
-#      - deployment/kremen-webpage
-#      - webpage=yeneek/kremen-webpage:$BUILD_ID
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: 'bash'
+    args:
+      - -c
+      - gcloud secrets versions access $_SECRET_VERSION --secret kubeconfig > /workspace/kubeconfig.yml
+  - name: gcr.io/cloud-builders/kubectl
+    entrypoint: kubectl
+    env:
+      - KUBECONFIG=/workspace/kubeconfig.yml
+    args:
+      - -n
+      - kremen-personal
+      - set
+      - image
+      - deployment/kremen-webpage
+      - webpage=yeneek/kremen-webpage:$BUILD_ID
 timeout: 1500s
 substitutions:
   _DOCKER_PASSWORD: provide password
