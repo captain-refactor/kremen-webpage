@@ -7,3 +7,9 @@
 .app-font {
     @apply font-mono font-thin uppercase;
 }
+
+.gradient-text {
+    color: transparent;
+    background-image: linear-gradient(0deg, rgb(227, 214, 0) 0%, rgb(255, 25, 25) 100%);
+    -webkit-background-clip: text;
+}

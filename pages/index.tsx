@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { observer } from 'mobx-react-lite'
+import Head from 'next/head'
 
 
 const Home: NextPage = observer(() => {
@@ -7,8 +8,11 @@ const Home: NextPage = observer(() => {
   return (
     <div>
       <div className='bg-white h-screen relative box-border'>
+        <Head>
+          <title>Jan Kremeň - Software Engineer</title>
+        </Head>
         <div className='pt-16 text-center md:absolute md:top-1/3 md:left-1/4 md:text-left md:p-0'>
-          <h1 className='text-4xl sm:text-6xl app-font'>Jan Kremeň</h1>
+          <h1 className='text-4xl sm:text-6xl app-font gradient-text'>Jan Kremeň</h1>
           <div className='text-xl sm:text-2xl ml-1 mb-6 app-font'>
             Software Engineer
           </div>
