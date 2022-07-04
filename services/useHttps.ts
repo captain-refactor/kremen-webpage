@@ -5,12 +5,13 @@ function isLocal(h: string): boolean {
 }
 
 export function useHttps() {
+  const httpsProtocol = 'https:'
+
   useEffect(() => {
       if (!isLocal(location.hostname)) {
-        const isHttp = location.protocol !== 'https'
+        const isHttp = location.protocol !== httpsProtocol
         if (isHttp) {
-          location.protocol = 'https'
-          console.log('redirected to https')
+          location.protocol = httpsProtocol
         }
       }
     },
